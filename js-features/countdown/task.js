@@ -1,9 +1,9 @@
-const time = document.getElementById('timer')
-
-setInterval(() => {
-    time.textContent = Number(time.textContent) - 1;
-    if (time.textContent <= 0) {
-        clearInterval();
-        alert('Вы победили в конкурсе!');
+const time = function () {
+    const output = document.getElementById('timer');
+    output.textContent -= 1;
+    if (output.textContent <= 0) {
+        alert('Вы выиграли');
+        clearInterval(intervalID);
     }
-}, 1000)
+}
+const intervalID = setInterval(time, 1000);
